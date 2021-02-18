@@ -1,4 +1,27 @@
-name: Node continious workflow
+name: Node js continious integration
 
-on:
-  push: [master]
+on: 
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      
+      - name: Install dependecies
+        run: npm ci
+      
+      - name: Testing...
+        run: npm run test
+
+      - name: Production build
+        run: npm run build
+
+
+
