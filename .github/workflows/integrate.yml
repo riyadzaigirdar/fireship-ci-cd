@@ -23,6 +23,9 @@ jobs:
       - name: Production build
         run: npm run build
 
+  send_message:
+    runs-on: ubuntu-latest
+    steps:
       - name: Twilio-Whatsapp Action
         uses: mdb571/wa-action@v1.0
         with:
