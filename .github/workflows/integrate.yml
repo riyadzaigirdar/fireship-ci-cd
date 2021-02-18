@@ -23,5 +23,14 @@ jobs:
       - name: Production build
         run: npm run build
 
+      - name: Twilio-Whatsapp Action
+        uses: mdb571/wa-action@v1.0
+        with:
+          from: ${{ secrets.FROM }}
+          to: ${{secrets.TO }}
+        env:
+          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH }}
+
 
 
