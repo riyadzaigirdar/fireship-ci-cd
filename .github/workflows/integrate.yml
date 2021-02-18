@@ -29,7 +29,8 @@ jobs:
       - name: Twilio-Whatsapp Action
         uses: mdb571/wa-action@v1.0
         with:
-          from: ${{ secrets.FROM }}
+          # from: ${{ secrets.FROM }}
+          from: whatsapp:+14155238886
           to: ${{secrets.TO }}
         env:
           TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
